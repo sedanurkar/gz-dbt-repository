@@ -1,42 +1,17 @@
 version: 2
 
-models:
-  - name: raw_gz_sales
-    description: "sales details"
-    columns:
-      - name: orders_id
-        description: "primary key"
-        tests:
-          - unique
-      - name: date_date
-        description: "sales date"
-      - name: pdt_id
-        description: "product id" 
-      - name: revenue
-        description: "revenue"
-      - name: quantity
-        description: "quantity"
-  - name: raw_gz_product
-    description: "product details"
-    columns:
-      - name: products_id
-        description: "primary key"
-        tests:
-          - unique
-      - name: purchSE_PRICE
-        description: "purchase_price"
-  - name: raw_gz_ship
-    description: "ship details"
-    columns:
-      - name: orders_id
-        description: "primary key"
-        tests:
-          - unique
-      - name: shipping_fee
-        description: "shipping_fee"
-      - name: shipping_fee_1
-        description: "shipping_fee_1"
-      - name: logCost
-        description: "logCost"
-      - name: ship_cost
-        description: "ship_cost"
+sources:
+  - name: raw
+    description: "Raw source data copied from BigQuery for the analytics pipeline"
+    database : project-6b0123de-d5db-4336-8df
+    schema : gz_raw_data
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Raw Sales Orders"
+      - name : product
+        identifier : raw_gz_product
+        description: "Raw product catalog"
+      - name : ship
+        identifier : raw_gz_ship
+        description : "Raw shipping and logistics costs"

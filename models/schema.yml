@@ -1,27 +1,29 @@
-version : 2
+version: 2
 
-models: 
+models:
   - name: raw_gz_sales
     description: sales details
     columns:
-    - name : orders_id 
-      description: primary key
-      tests: 
-       - unique
-       - not_null
-  - name : raw_gz_product
-    description : product details
-    columns : 
-     - name : products_id 
-       description : primary key
-       tests:
-       - unique
-       - not_null
-  - name : raw_gz_ship
-    description : ship details
-    columns: 
-     - name : orders_id 
-       description : primary key 
-       tests: 
-       - unique
-       - not_null
+      - name: orders_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gz_product
+    description: product details
+    columns:
+      - name: products_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gz_ship
+    description: ship details
+    columns:
+      - name: orders_id
+        description: primary key
+        tests:
+          - unique
+          - not_null

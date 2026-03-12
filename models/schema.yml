@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw source data copied from BigQuery for the analytics pipeline"
+    database : project-6b0123de-d5db-4336-8df
+    schema : gz_raw_data
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Raw Sales Orders"
+      - name : product
+        identifier : raw_gz_product
+        description: "Raw product catalog"
+      - name : ship
+        identifier : raw_gz_ship
+        description : "Raw shipping and logistics costs"
